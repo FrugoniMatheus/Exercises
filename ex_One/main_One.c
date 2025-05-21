@@ -20,20 +20,20 @@
 
   double mediaAlunos(double v[], int tamanho){
     int i;
-    double media;
-    for(i = 0; i <= tamanho; i++){
+    double media = 0;
+    for(i = 0; i < tamanho; i++){
       media += v[i];
     }
-    return media / (tamanho + 1);
+    return media / tamanho;
   }
 
 int main(){
 
-  double notasAlunos[4];
+  double notasAlunos[5];
   int i, tamanhoNotasAlunos, mediaProvas;
   tamanhoNotasAlunos = sizeof(notasAlunos) / sizeof(notasAlunos[0]);
 
-  for(i = 0; i <= tamanhoNotasAlunos; i++){
+  for(i = 0; i < tamanhoNotasAlunos; i++){
     printf("Digite a nota do %d aluno: ", i + 1);
     scanf("%lf", &notasAlunos[i]);
   }
@@ -42,7 +42,7 @@ int main(){
   media = mediaAlunos(notasAlunos, tamanhoNotasAlunos);
   printf("A media eh: %.1f\n", media);
 
-  for(i = 0; i <= tamanhoNotasAlunos; i++){
+  for(i = 0; i < tamanhoNotasAlunos; i++){
     if(notasAlunos[i] >= media){
       printf("Aluno %d: Aprovado\n", i + 1);
     }
